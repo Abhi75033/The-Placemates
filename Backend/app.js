@@ -3,21 +3,18 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 // import express from 'express';
 import session from 'express-session';
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import passport from 'passport';
 import oauthStartergy from 'passport-google-oauth2'
 import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
 
-=======
->>>>>>> 7c9612f (Bakend Login setup has completed)
-=======
+
 import passport from 'passport';
 import oauthStartergy from 'passport-google-oauth2'
 import dotenv from 'dotenv'
 
->>>>>>> ec7805a9 (Integrated googleauth successfully)
+
 
 const app = express()
 dotenv.config()
@@ -26,12 +23,9 @@ const Auth = oauthStartergy.Strategy;
 
 const cliendId = process.env.CLIENTID
 const client_Secrect = process.env.CLIENT_SERECT
-console.log(client_Secrect);
-//
 
 
-// Set session
-<<<<<<< HEAD
+
 
 app.use(session({
     secret: 'IJ*?co#5oTQCgdf@werd', // Replace with a long random string
@@ -40,8 +34,7 @@ app.use(session({
   }))
 
   //Passport initialization
-=======
->>>>>>> ec7805a9 (Integrated googleauth successfully)
+
 
 app.use(session({
     secret: 'IJ*?co#5oTQCgdf@werd', // Replace with a long random string
@@ -61,7 +54,7 @@ app.use(cookieParser())
 app.use(session())
 app.use(passport.initialize())
 app.use(passport.session())
-<<<<<<< HEAD
+
 
 // Routers
 import LoginRouter from './src/routes/Login.routes.js'
@@ -140,8 +133,7 @@ app.get('/logout',(req,res,next)=>{
   })
 })
 
-=======
->>>>>>> ec7805a9 (Integrated googleauth successfully)
+
 
 // Routers
 import LoginRouter from './src/routes/Login.routes.js'
