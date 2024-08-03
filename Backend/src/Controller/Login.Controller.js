@@ -82,96 +82,13 @@ const Auth = oauthStartergy.Strategy;
 
 
 
-    const formattedPhoneNumber = `+91${Phone_No}`;
-    const otp = Math.floor(100000 + Math.random() * 900000);
-
-    const token = jwt.sign({ Phone_No, otp }, formattedPhoneNumber , { expiresIn: '5m' });
-  
-
-  
-    
-  
-
-    const message = await twilioClient.messages.create({
-        body: `${otp} is your one-time password (OTP) for phone verification to login at ThePlacemate`,
-        from:process.env.TWILIO_PHONE_NO,
-        to: formattedPhoneNumber
-    })
-
-    if (!message) {
-        throw new ApiError(404,'Fail to sent otp')
-    }
-
-    const option ={
-        httpOnly:true,
-        secure: true,
-    }
-
-    return res.cookie('Phone_No',Phone_No).cookie('otp',otp).status(200).json(
-        {message:'Otp sent'}
-    )
-
-})
-
 
 
 
 
 export {LoginwithMail}
 
-const VerifyOtp = asyncHandler(async(req,res)=>{
-    
-    const {EnterdOtp} = req.body
 
-    if (!EnterdOtp) {
-        throw new ApiError(404,'Otp not found')
-    }
-
-  
-    const otp = req.cookies.otp
-
-
-     if (otp == EnterdOtp) {
-        
-       
-
-
-        const Querys = {Phone_No:req.cookies.Phone_No}
-
-        const LoginUser = await Login.find(Querys)
-
-        let user;
-
-        if (!LoginUser) {
-             user = await  Login.create({
-                Phone_No:req.cookies.Phone_No
-            })
-        }
-
-        
-
-        // console.log(LoginUser[0]._id);
-
-       const accessToken =  jwt.sign({_id:LoginUser[0]._id},process.env.ACCESS_TOKEN_SECRECT,{expiresIn:'5d'})
-
-                
-
-      res.clearCookie('otp').clearCookie('Phone_No')
-      
-        res.cookie('accessToken',accessToken).json(
-            {message:'done'}
-        )
-        
-    }else{
-        return  res.clearCookie('otp').status(200).json(
-            {messages:'Otp Invlid'}
-        )
-    }
-
-})
-
-
-export {sendOtp,VerifyOtp}
 
 const GooleLogin = asyncHandler(async(req,res)=>{
    
