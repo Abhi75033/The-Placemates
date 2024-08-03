@@ -64,7 +64,7 @@ The Placemate Team
         {message:'Email-sent'})
 
 
-import { ApiResPonse } from "../Utils/ApiResponse.utils.js";
+
 
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
@@ -159,7 +159,7 @@ const VerifyOtp = asyncHandler(async(req,res)=>{
       res.clearCookie('otp').clearCookie('Phone_No')
       
         res.cookie('accessToken',accessToken).json(
-            new ApiResPonse(200,{user},'OTP verified and Login successFull')
+            {message:'done'}
         )
         
     }else{
