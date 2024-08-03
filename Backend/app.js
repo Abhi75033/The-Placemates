@@ -135,8 +135,6 @@ app.get('/logout',(req,res,next)=>{
 
 
 // Routers
-import LoginRouter from './src/routes/Login.routes.js'
-import { Login } from './src/Model/Login.model.js';
 
 
 app.use('/api/v1/login',LoginRouter)
