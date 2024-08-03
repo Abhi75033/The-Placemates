@@ -63,7 +63,7 @@ The Placemate Team
     res.status(200).json(
         {message:'Email-sent'})
 
-import { ApiError } from "../Utils/ApiError.utils.js";
+
 import { ApiResPonse } from "../Utils/ApiResponse.utils.js";
 
 import jwt from 'jsonwebtoken'
