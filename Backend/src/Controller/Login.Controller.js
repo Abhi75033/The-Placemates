@@ -61,7 +61,7 @@ The Placemate Team
 
 
     res.status(200).json(
-        {message:'Email-sent'}
+        {message:'Email-sent'})
 
 import { ApiError } from "../Utils/ApiError.utils.js";
 import { ApiResPonse } from "../Utils/ApiResponse.utils.js";
@@ -109,7 +109,6 @@ const Auth = oauthStartergy.Strategy;
 
     return res.cookie('Phone_No',Phone_No).cookie('otp',otp).status(200).json(
         {message:'Otp sent'}
->>>>>>> 7c9612f (Bakend Login setup has completed)
     )
 
 })
@@ -180,4 +179,3 @@ const GooleLogin = asyncHandler(async(req,res)=>{
 
 
 export {GooleLogin}
->>>>>>> ec7805a9 (Integrated googleauth successfully)
