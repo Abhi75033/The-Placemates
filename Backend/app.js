@@ -10,7 +10,7 @@ import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
 
 
-import passport from 'passport';
+import passport from 'passport'
 import oauthStartergy from 'passport-google-oauth2'
 import dotenv from 'dotenv'
 
