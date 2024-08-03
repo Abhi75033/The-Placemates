@@ -13,7 +13,7 @@ const LoginSchema = new mongoose.Schema({
    },
    image:{
     type:String
-   }
+   },
     Phone_No:{
         type:Number,
         required:true
