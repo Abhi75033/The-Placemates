@@ -11,8 +11,7 @@ import jwt from 'jsonwebtoken'
 
 
 
-import oauthStartergy from 'passport-google-oauth2'
-import dotenv from 'dotenv'
+
 
 
 
