@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import {asyncHandler} from '../Utils/AsyncHandler.utils.js'
 import nodemailer from 'nodemailer'
 import { LoginWitlmail } from '../Model/Login_with_mail_model.js'
@@ -63,18 +62,18 @@ The Placemate Team
 
     res.status(200).json(
         {message:'Email-sent'}
-=======
+
 import { ApiError } from "../Utils/ApiError.utils.js";
 import { ApiResPonse } from "../Utils/ApiResponse.utils.js";
-import { asyncHandler } from "../Utils/AsyncHandler.utils.js";
+
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 import twilio from 'twilio'
-=======
+
 import passport from "passport";
 import oauthStartergy from 'passport-google-oauth2'
 import {asyncHandler} from '../Utils/AsyncHandler.utils.js'
->>>>>>> ec7805a9 (Integrated googleauth successfully)
+
 import { Login } from "../Model/Login.model.js";
 
 
@@ -82,7 +81,7 @@ import { Login } from "../Model/Login.model.js";
 const Auth = oauthStartergy.Strategy;
 
 
-<<<<<<< HEAD
+
     const formattedPhoneNumber = `+91${Phone_No}`;
     const otp = Math.floor(100000 + Math.random() * 900000);
 
@@ -115,13 +114,12 @@ const Auth = oauthStartergy.Strategy;
 
 })
 
-<<<<<<< HEAD
 
 
 
 
 export {LoginwithMail}
-=======
+
 const VerifyOtp = asyncHandler(async(req,res)=>{
     
     const {EnterdOtp} = req.body
@@ -175,8 +173,7 @@ const VerifyOtp = asyncHandler(async(req,res)=>{
 
 
 export {sendOtp,VerifyOtp}
->>>>>>> 7c9612f (Bakend Login setup has completed)
-=======
+
 const GooleLogin = asyncHandler(async(req,res)=>{
    
 })
