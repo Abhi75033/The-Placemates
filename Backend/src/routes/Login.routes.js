@@ -11,13 +11,8 @@ const router = Router()
 router.route('/send-mail').get(LoginwithMail)
 import { sendOtp, VerifyOtp } from "../Controller/Login.Controller.js";
 
-import passport from "passport";
 import { GooleLogin } from "../Controller/Login.Controller.js";
 
-
-
-
-const router = Router()
 
 
 
